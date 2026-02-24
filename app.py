@@ -14,7 +14,7 @@ This interactive dashboard explores how the **Bitcoin Fear & Greed Index** impac
 # --- DATA LOADING & CACHING ---
 @st.cache_data
 def load_data():
-    hist_df = pd.read_csv('historical_data.csv')
+    hist_df = pd.read_csv('historical_data.zip')
     sent_df = pd.read_csv('fear_greed_index.csv')
     
     hist_df['Date'] = pd.to_datetime(hist_df['Timestamp IST'], format='%d-%m-%Y %H:%M').dt.date
