@@ -7,7 +7,7 @@ Here is a comprehensive, professionally structured `README.md` for your GitHub r
 
 ##  Live Interactive Dashboard
 
-Experience the data first-hand: **[Insert Your Streamlit App Link Here]**
+Experience the data first-hand: [**[Insert Your Streamlit App Link Here]**](https://primetradeai-assignment-tzruqz5xdqsxulxvqvztvk.streamlit.app/)
 
 ---
 
