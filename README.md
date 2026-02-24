@@ -2,28 +2,85 @@
 
 This repository contains my submission for the Data Science Intern assignment at **Primetrade.ai**. 
 
-##  Objective
-The goal of this project is to analyze how market sentiment (Bitcoin Fear & Greed Index) impacts trader behavior, directional bias, and realized profitability on the Hyperliquid DEX, and to propose actionable trading strategies based on these data-driven insights.
+Here is a comprehensive, professionally structured `README.md` for your GitHub repository. This is designed to highlight your technical proficiency, the advanced 93.75% accuracy of your model, and your ability to deploy real-world tools like the Streamlit dashboard.
 
-##  Repository Contents
-* `Trader_Behavior_Analysis.ipynb`: The main Jupyter Notebook containing the complete data pipeline, methodology write-up, behavioral segmentation, and the predictive model.
-* `sentiment_analysis_dashboard.png`: A 4-panel visual dashboard showing PnL, Long/Short ratio, and trade frequency across sentiment regimes.
-* `sentiment_summary.csv` / `frequency_performance.csv` / `size_performance.csv`: Exported data tables showing aggregate performance disparities.
-* `model_results.txt`: The classification report and accuracy metrics for the bonus predictive model.
 
-##  Key Highlights & Insights
-1. **The Contrarian Premium:** Traders perform significantly better on **"Fear"** days (Avg Daily PnL: $2,883) compared to **"Greed"** days ($2,169). During fear periods, the cohort heavily fades the panic, pushing the Long/Short ratio to an extreme **6.8x**.
-2. **The Overtrading Trap:** During euphoric "Greed" periods, high-frequency traders severely dilute their edge ($41 PnL per trade) compared to infrequent, selective traders ($155 PnL per trade). 
-3. **Retail Momentum Dependency:** Smaller position-size traders ("Retail") lose their statistical edge during "Neutral" chop zones, seeing their average PnL drop by over 65%. 
+##  Live Interactive Dashboard
 
-## Predictive Modeling
-To forecast market risk, I engineered a **Random Forest Classifier** to predict the **volatility of the next day's PnL** (High Volatility vs. Low Volatility). 
-* **Features Used:** Rolling PnL Volatility, Average Trade Size, Trade Count, and One-Hot Encoded Sentiment Regimes.
-* **Result:** The model successfully predicts next-day PnL volatility regimes with **93.75% accuracy**, demonstrating that massive surges in behavioral volume and sentiment extremes reliably forecast incoming PnL swings.
+Experience the data first-hand: **[Insert Your Streamlit App Link Here]**
 
-## ⚙️ How to Run the Analysis Locally
-1. Clone this repository to your local machine.
-2. Ensure the raw datasets (`historical_data.csv` and `fear_greed_index.csv`) are placed in the root directory.
-3. Install the required Python dependencies:
-   ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn
+---
+
+## Project Overview
+
+The core objective was to determine if market psychological regimes (Fear vs. Greed) influence trader success, directional bias, and risk appetite. The analysis covers over **211,000 individual trades** from 2023 to 2025.
+
+### Key Deliverables:
+
+* **Part A: Data Engineering** – Merged high-frequency trader data with sentiment indices, engineered daily PnL, Win Rates, and Long/Short ratios.
+* **Part B: Behavioral Analysis** – Segmented the user base into "Whales vs. Retail" and "Frequent vs. Infrequent" traders to identify performance disparities.
+* **Part C: Actionable Strategies** – Proposed specific trading rules based on empirical findings.
+* **Bonus: Machine Learning** – Built a high-accuracy predictive model for market volatility.
+* **Bonus: UI Deployment** – Developed a live Streamlit dashboard for stakeholder exploration.
+
+---
+
+##  Core Insights & Findings
+
+1. **Contrarian Alpha:** Traders significantly outperform during **Fear** regimes (Avg. Daily PnL: **$2,883**) compared to **Greed** regimes (**$2,169**).
+2. **The Long Bias:** In fearful markets, the cohort displays a massive contrarian long bias, with a **Long/Short ratio of 6.8x**, successfully "buying the blood."
+3. **The Overtrading Penalty:** Frequent traders see their edge collapse during euphoria (Greed), making **$114 less per trade** on average than infrequent, selective traders.
+4. **Neutral Market Decay:** Retail traders lose over **65% of their edge** in directionless (Neutral) markets, identifying these periods as "high-risk chop zones."
+
+---
+
+## Predictive Model 
+
+A **Random Forest Classifier** was engineered to predict **Next-Day PnL Volatility** (High vs. Low Volatility).
+
+* **Target:** Next-Day standard deviation of realized PnL.
+* **Features:** Rolling PnL volatility, average position sizes, trade frequency, and encoded sentiment regimes.
+* **Result:** The model achieved **93.75% Accuracy**, proving that behavioral data paired with psychological indices is a powerful leading indicator of market risk.
+
+---
+
+##  Repository Structure
+
+* `Trader_Behavior_Analysis.ipynb` – Main Jupyter Notebook (Methodology, Analysis, & ML Model).
+* `app.py` – Streamlit dashboard script.
+* `requirements.txt` – List of dependencies for local and cloud deployment.
+* `historical_data.zip` – Compressed Hyperliquid dataset.
+* `fear_greed_index.csv` – Sentiment dataset.
+* `sentiment_analysis_dashboard.png` – Static visualization of core insights.
+
+---
+
+##  Setup & Installation
+
+To run the analysis and dashboard locally:
+
+1. **Clone the Repo:**
+```bash
+git clone https://github.com/your-username/primetrade-assignment.git
+cd primetrade-assignment
+
+```
+
+
+2. **Install Dependencies:**
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn streamlit plotly
+
+```
+
+
+3. **Launch the Dashboard:**
+```bash
+streamlit run app.py
+
+```
+
+
+
+---
+
